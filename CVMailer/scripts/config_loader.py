@@ -35,11 +35,11 @@ DEFAULT_CONFIG = {
         "from_name": "Name Surname",
         "subject": "Candidature stage — {company}",
         "body_template": (
-            "Bonjour {contact_name_or_team},\n\n"
-            "Je me permets de vous contacter pour un stage en développement. "
-            "Vous trouverez ci-joint mon CV et ma lettre de motivation.\n\n"
+            "Hello {contact_name_or_team},\n\n"
+            "I am reaching out to apply for a development internship. "
+            "Please find attached my CV and cover letter.\n\n"
             "Portfolio: {portfolio_url}\nLinkedIn: {linkedin_url}\n\n"
-            "Bien cordialement,\n{first_name} {last_name}\n{phone}\n{email}"
+            "Kind regards,\n{first_name} {last_name}\n{phone}\n{email}"
         ),
         "signature": "",
         "attachments": ["cv", "cover_letter", "flyer"],
@@ -61,7 +61,7 @@ DEFAULT_CONFIG = {
             "flyer_upload": ["input[type='file']"],
             "submit": ["button[type='submit']", "input[type='submit']", "text=Postuler", "text=Envoyer", "text=Soumettre", "text=Apply", "text=Submit"],
         },
-        "message_template": "Bonjour, je postule pour un stage de 5 mois. Vous trouverez ci-joint mon CV et ma lettre de motivation. Merci !"
+        "message_template": "Hello, I am applying for an internship. Please find attached my CV and cover letter. Thank you!"
     },
     "logging": {
         "output_csv": "./logs/applications_log.csv",
