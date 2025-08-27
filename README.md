@@ -48,6 +48,7 @@ Resume_AutoApply/
 │   └─ applications_log.csv
 ├─ companies.csv              # Target companies
 ├─ README.md                  # Instructions
+├─ requirements.txt           # Dependencies
 └─ .gitignore                 # Ignore secrets and logs
 ```
 
