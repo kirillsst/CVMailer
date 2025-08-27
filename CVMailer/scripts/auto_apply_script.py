@@ -69,8 +69,8 @@ APP_VERSION = "0.1.0"
 
 DEFAULT_CONFIG = {
     "identity": {
-        "first_name": "Имя",
-        "last_name": "Фамилия",
+        "first_name": "Name",
+        "last_name": "Surname",
         "email": "you@example.com",
         "phone": "+33 6 00 00 00 00",
         "city": "Paris",
@@ -79,8 +79,8 @@ DEFAULT_CONFIG = {
     },
     "files": {
         "cv": "./docs/CV.pdf",
-        "cover_letter": "./docs/Lettre_de_motivation.pdf",
-        "simplon_flyer": "./docs/SIMPLON_flyer.pdf",
+        "cover_letter": "./docs/motivation.pdf",
+        "flyer": "./docs/flyer.pdf",
     },
     "email": {
         "enabled": True,
@@ -88,7 +88,7 @@ DEFAULT_CONFIG = {
         "smtp_port": 465,
         "username": "you@example.com",
         "app_password": "app_password_here",
-        "from_name": "Имя Фамилия",
+        "from_name": "Name Surname",
         "subject": "Candidature stage (5 mois) — {company}",
         # You can write this in FR/RU/EN. {first_name}, {last_name}, {company}, {contact_name}, {intro_note}
         "body_template": (
