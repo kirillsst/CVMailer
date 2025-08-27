@@ -1,4 +1,4 @@
-# Auto-Apply to Internships/Stages (≈5 months)
+# Auto-Apply to Internships/Stages
 
 ## What this project does
 
@@ -34,6 +34,7 @@ Resume_AutoApply/
 │   ├─ config_loader.py         # Load and initialize config.yaml
 │   ├─ companies.py             # Read and process companies.csv
 │   ├─ email_utils.py           # Build and send emails
+│   ├─ processor.py             # Core logic for processing each company: sends emails, fills forms, logs results
 │   ├─ forms.py                 # Fill web forms via Playwright
 │   ├─ logger.py                # Append to application log CSV
 │   └─ utils.py                 # Helper functions (delays, etc.)

@@ -33,10 +33,10 @@ DEFAULT_CONFIG = {
         "username": "you@example.com",
         "app_password": "app_password_here",
         "from_name": "Name Surname",
-        "subject": "Candidature stage (5 mois) — {company}",
+        "subject": "Candidature stage — {company}",
         "body_template": (
             "Bonjour {contact_name_or_team},\n\n"
-            "Je me permets de vous contacter pour un stage de 5 mois en développement. "
+            "Je me permets de vous contacter pour un stage en développement. "
             "Vous trouverez ci-joint mon CV et ma lettre de motivation.\n\n"
             "Portfolio: {portfolio_url}\nLinkedIn: {linkedin_url}\n\n"
             "Bien cordialement,\n{first_name} {last_name}\n{phone}\n{email}"
