@@ -1,8 +1,8 @@
-# Auto-Apply to Internships/Stages (≈5 months)
+# Auto-Apply to Internships/Stages
 
 ## What this script does
 
-* Sends tailored emails with your CV, cover letter, and SIMPLON flyer to contacts in a CSV.
+* Sends tailored emails with your CV, cover letter, and flyer to contacts in a CSV.
 * Optionally auto-fills common web application forms using Playwright (Chromium) and uploads your files.
 * Keeps an application log (CSV) with status, timestamp, and any error messages.
 * Lets you personalize a short intro paragraph per company (from the CSV) that is merged into the email/body text.
@@ -19,8 +19,7 @@
 * Install dependencies:
 
 ```bash
-pip install playwright python-dotenv pyyaml pandas beautifulsoup4 lxml
-playwright install chromium
+pip install -r requirements.txt
 ```
 
 ## Required Files
@@ -42,7 +41,7 @@ Resume_AutoApply/
 │
 ├─ docs/                      # Attachments (CV, cover letter, flyer)
 ├─ scripts/                   # Python script
-│   └─ auto_apply.py
+│   └─ auto_apply_script.py
 ├─ config/                    # Config file
 │   └─ config.yaml
 ├─ logs/                      # Application logs
