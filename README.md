@@ -29,6 +29,7 @@ playwright install chromium
 Resume_AutoApply/
 │
 ├─ docs/                       # Your CV, cover letter, and any additional attachments
+├─ companies/                   # Your list of companies
 ├─ scripts/                     # Python scripts (modularized)
 │   ├─ __main__.py              # Main entry point (run this file)
 │   ├─ config_loader.py         # Load and initialize config.yaml
