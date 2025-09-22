@@ -28,49 +28,55 @@ Files you need to prepare
 
 """
 
-import argparse
-from scripts.config_loader import load_or_init_config
-from scripts.processor import process_company
-from scripts.companies import read_companies
-from scripts.utils import random_delay
-from pathlib import Path
+# import argparse
+# from scripts.config_loader import load_or_init_config
+# from scripts.processor import process_company
+# from scripts.companies import read_companies
+# from scripts.utils import random_delay
+# from pathlib import Path
 
-def main():
-    parser = argparse.ArgumentParser(description="Auto-apply to stage offers (emails + forms)")
-    parser.add_argument("--config", default="./config/config.yaml", help="Path to config.yaml")
-    parser.add_argument("--companies", default="./companies/companies.csv", help="Path to companies.csv")
-    parser.add_argument("--mode", choices=["email", "form", "both"], default="both")
-    parser.add_argument("--dry-run", action="store_true", help="Don't actually send/submit")
-    parser.add_argument("--limit", type=int, default=None, help="Limit number of companies to process")
-    args = parser.parse_args()
+# def main():
+#     parser = argparse.ArgumentParser(description="Auto-apply to stage offers (emails + forms)")
+#     parser.add_argument("--config", default="./config/config.yaml", help="Path to config.yaml")
+#     parser.add_argument("--companies", default="./companies/companies.csv", help="Path to companies.csv")
+#     parser.add_argument("--mode", choices=["email", "form", "both"], default="both")
+#     parser.add_argument("--dry-run", action="store_true", help="Don't actually send/submit")
+#     parser.add_argument("--limit", type=int, default=None, help="Limit number of companies to process")
+#     args = parser.parse_args()
 
-    cfg = load_or_init_config(Path(args.config))
-    companies = read_companies(Path(args.companies))
+#     cfg = load_or_init_config(Path(args.config))
+#     companies = read_companies(Path(args.companies))
 
-    if args.limit:
-        companies = companies[: args.limit]
+#     if args.limit:
+#         companies = companies[: args.limit]
 
-    # Respectful pacing
-    forms_cfg = cfg.get("forms", {})
-    min_delay = forms_cfg.get("min_delay_s", 5)
-    max_delay = forms_cfg.get("max_delay_s", 15)
+#     # Respectful pacing
+#     forms_cfg = cfg.get("forms", {})
+#     min_delay = forms_cfg.get("min_delay_s", 5)
+#     max_delay = forms_cfg.get("max_delay_s", 15)
 
-    count = 0
-    for comp in companies:
-        if not comp.company:
-            continue
-        if not comp.contact_email and not comp.apply_url:
-            print(f"[!] Skipping {comp.company}: no contact_email or apply_url")
-            continue
-        process_company(cfg, comp, dry_run=args.dry_run, mode=args.mode)
-        count += 1
-        if args.limit and count >= args.limit:
-            break
-        # politeness delay between companies
-        random_delay(min_delay, max_delay)
+#     count = 0
+#     for comp in companies:
+#         if not comp.company:
+#             continue
+#         if not comp.contact_email and not comp.apply_url:
+#             print(f"[!] Skipping {comp.company}: no contact_email or apply_url")
+#             continue
+#         process_company(cfg, comp, dry_run=args.dry_run, mode=args.mode)
+#         count += 1
+#         if args.limit and count >= args.limit:
+#             break
+#         # politeness delay between companies
+#         random_delay(min_delay, max_delay)
 
-    print("\n[i] Done. See log:", cfg["logging"]["output_csv"]) 
+#     print("\n[i] Done. See log:", cfg["logging"]["output_csv"]) 
 
 
+# if __name__ == "__main__":
+#     main()
+
+from .gui.main_gui import CVMailerApp
+
+# Entry point for GUI
 if __name__ == "__main__":
-    main()
+    CVMailerApp().run()

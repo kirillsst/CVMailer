@@ -4,3 +4,5 @@ pyyaml
 pandas
 beautifulsoup4
 lxml
+kivy
+kivymd

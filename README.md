@@ -39,6 +39,11 @@ Resume_AutoApply/
 │   ├─ forms.py                 # Fill web forms via Playwright
 │   ├─ logger.py                # Append to application log CSV
 │   └─ utils.py                 # Helper functions (delays, etc.)
+│   └─ gui/                     # Folder for GUI components
+│       ├─ __init__.py
+│       ├─ main_gui.py          # Main Kivy window
+│       ├─ gui.kv               # Kivy language file for GUI design
+│       └─ widgets.py           # Custom widgets ?
 ├─ config/                     # Configuration files
 │   └─ config.yaml              # Set paths, email credentials, and settings
 ├─ logs/                       # Stores application logs

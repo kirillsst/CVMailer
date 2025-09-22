@@ -1,0 +1,32 @@
+MDTabs:
+    id: tabs
+
+    MDTab:
+        title: "Dashboard"
+        BoxLayout:
+            orientation: "vertical"
+            Label:
+                text: "CVMailer - Auto Apply to Internships"
+                font_size: 24
+            MDRaisedButton:
+                text: "Start Mailing"
+                on_press: root.start_sending()
+
+    MDTab:
+        title: "Companies"
+        ScrollView:
+            GridLayout:
+                id: company_list
+                cols: 1
+                size_hint_y: None
+                height: self.minimum_height
+
+    MDTab:
+        title: "Custom Tab"
+        BoxLayout:
+            orientation: "vertical"
+            spacing: 10
+            Label:
+                text: "Пример содержимого"
+            Button:
+                text: "Кнопка"
